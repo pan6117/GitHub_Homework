@@ -33,6 +33,63 @@ function inputWord(w) {
 }
 inputWord("I'm learning coding.");
 
+// Teacher's solution -------------------------
+function printYes(str) {
+  let exists = false; // This flag value tells us if y exists or not
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] == "y") {
+      exists = true;
+      break;
+    }
+  }
+  if (exists == true) {
+    console.log("Yes");
+  } else {
+    console.log("No");
+  }
+}
+printYes("crayzy");
+
+// Second solution -------------------------------------
+// function printYes(str) {
+//     // for (let i = 0; i < str.length; i++) {
+
+//         if (str.includes('y')) {
+//             console.log('Yes');
+//         }
+//     // }
+// } --> THIS LOGIC IS SIMILAR TO THE FOR LOOP WE WROTE ABOVE WITH BREAK KEYWORD
+
+// // printYes("yellow");
+// printYes('cryazy');
+
+// Hiro's solution ----------------------------
+function printY(str2) {
+  if (str2.includes("y")) {
+    console.log("yes");
+  } else {
+    console.log("no");
+  }
+}
+printY("crayzy");
+
+// Without Break
+// c | str[0] == 'y' | No
+// r | str[1] == 'y' | No
+// a | str[2] == 'y' | No
+// y | str[3] == 'y' | Yes
+// z | str[4] == 'y' | No
+// y | str[5] == 'y' | Yes
+
+// With Break
+// c | str[0] == 'y' | No
+// r | str[1] == 'y' | No
+// a | str[2] == 'y' | No
+// y | str[3] == 'y' | Yes | console.log('Yes') | break the loop
+// z
+// y
+
 /*Question 4 *****************************
 Write a function which accepts 4 parameters (different scores of a student for subjects), and then calculate the average of all the score.
 If the average is more than 90 , then console grade A
@@ -49,8 +106,31 @@ Else if (other condition) {
 } else {
 } */
 
-//function studentScore(score1, score2, score3, score40{ }
+//function studentScore(score1, score2, score3, score4){ }
+// The Greater Solution
 
+let sum = 0;
+function studentScore(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i];
+  }
+  //console.log(sum);
+  averageScore = sum / arr.length;
+
+  if (averageScore > 90) {
+    console.log("Average: " + averageScore + ", Grade: A");
+  } else if (90 >= averageScore && averageScore > 70) {
+    console.log("Average: " + averageScore + ", Grade: B");
+  } else if (70 >= averageScore && averageScore > 50) {
+    console.log("Average: " + averageScore + ", Grade: C");
+  } else {
+    console.log("Average: " + averageScore + ", Grade: F");
+  }
+}
+
+studentScore([90, 90, 90, 90]);
+
+/* Second Solution -----------------------------------------
 let studentScore = [100, 100, 100, 100];
 let sum = 0;
 for (let i = 0; i < studentScore.length; i++) {
@@ -68,3 +148,29 @@ if (averageScore > 90) {
 } else {
   console.log("Average: " + averageScore + ", Grade: F");
 }
+*/
+
+// Teacher's solution --------------------------------------
+function gradeStudents(score1, score2, score3, score4) {
+  let averageScore = (score1 + score2 + score3 + score4) / 4;
+  console.log("Average Score:", averageScore);
+
+  if (averageScore > 90) {
+    console.log("Grade A");
+  } else if (averageScore < 70 && averageScore <= 90) {
+    console.log("Grade B");
+  } else if (averageScore < 50 && averageScore <= 70) {
+    console.log("Grade C");
+  } else {
+    console.log("Grade F");
+  }
+}
+gradeStudents(80, 40, 60, 70);
+
+// BODMAS (Top --> Bottom)
+// B --> Bracketd
+// O --> Orders / Powers
+// D --> Division
+// M --> Multiplication
+// A --> Addition
+// S --> Subtraction
