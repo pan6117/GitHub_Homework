@@ -29,18 +29,18 @@ function sumAll(arr) {
   }
   console.log(sum);
 }
-
 sumAll([1, 2, 3, 4, 5, 6]);
 
-// function sumAll(arr) {
+// Teacher's Solution -----------------------------------------------
+// let numList = [1, 2, 3, 4, 5, 6];
+// function sumOfElements(array) {
 //   let sum = 0;
-//   for (let i = 0; i < arr.length; i++) {
-//     sum = sum + arr[i];
+//   for (let i = 0; i < array.length; i++) {
+//     sum = sum + array[i];
 //   }
 //   return sum;
 // }
-// console.log(sum);
-//sumAll([1, 2, 3, 4, 5, 6]);
+// console.log(sumAll(numList));
 
 /* Question 3 → (ADVANCE) ***********************************
 Write a function that takes an array as a parameter and returns the largest number inside that array
@@ -50,26 +50,24 @@ Function largestNumber(array) {
 // Print the largest number inside the array // 40
 } */
 
+// Solution 1 -----------------------------------------------------
 function inputArr(arr2) {
   console.log(arr2, "The largest number is:", Math.max(...arr2));
-  console.log(arr2, "The smallest number is:", Math.min(...arr2));
+  //console.log(arr2, "The smallest number is:", Math.min(...arr2));
 }
-
 inputArr([10, 30, 2, 30, 5, -5, 100, 100]);
 
-//test --------------------------- failed
-// function inputArr(arr2) {
-//   for (let i = 0; i < arr2.length; i++) {
-//       console.log(arr2[i]);
-//       while (arr2[i] > arr2[j]) {
-//         console.log(arr2[i]);
-//       }
-//     }
-//   }
-// }
-// inputArr([10, 20, 30]);
-
-// let numberList = [20, 40, , -10, 5, 40, 5, 11];
-// function largestNumber() {
-//   let max =
-// }
+// Solution 2 -----------------------------------------------------
+function largeNum(arr3) {
+  console.log(arr3);
+  //let large = -9999;
+  let large = null;
+  //let large = arr3[0];
+  for (i = 0; i < arr3.length; i++) {
+    if (large < arr3[i]) {
+      large = arr3[i];
+    }
+  }
+  console.log("The largest number is:", large);
+}
+largeNum([10, 30, 2, 30, 5, -5, 100, 100]);

@@ -60,26 +60,35 @@ console.log(starts);
 //    starts += "\n"
 // }
 
-function inputStar2(num2) {
-  let star2 = "";
-  // for (i = 0; i < num2 / 2; i++) {
-  //   star2 = star2 + "*";
-  //   console.log(star2);
-  // }
-  for (i = 0; i < num2 / 2; i++) {
-    for (j = 0; j <= i; j++) {
-      star2 = star2 + "*";
-    }
-    star2 = star2 + "\n";
-  }
+// function inputStar2(num2) {
+//   let star2 = "";
+//   for (i = 0; i < num2 / 2; i++) {
+//     for (j = 0; j <= i; j++) {
+//       star2 = star2 + "*";
+//     }
+//     star2 = star2 + "\n";
+//   }
+//   for (i = num2 / 2 - 1; i > 0; i--) {
+//     for (j = 0; j < i; j++) {
+//       star2 = star2 + "*";
+//     }
+//     star2 = star2 + "\n";
+//   }
+//   console.log(star2);
+// }
+// inputStar2(9);
 
-  for (i = num2 / 2 - 1; i > 0; i--) {
-    for (j = 0; j < i; j++) {
-      star2 = star2 + "*";
+function largeNum(arr) {
+  console.log(arr);
+  //let large = -9999;
+  let large = null;
+  //let large = arr[0];
+  for (i = 0; i < arr.length; i++) {
+    if (large < arr[i]) {
+      large = arr[i];
     }
-    star2 = star2 + "\n";
   }
-  console.log(star2);
+  console.log(large);
 }
 
-inputStar2(9);
+largeNum([20, 30, 50, 40, 0, 10]);
