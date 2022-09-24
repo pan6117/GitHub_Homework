@@ -59,3 +59,27 @@ console.log(starts);
 //    }
 //    starts += "\n"
 // }
+
+function inputStar2(num2) {
+  let star2 = "";
+  // for (i = 0; i < num2 / 2; i++) {
+  //   star2 = star2 + "*";
+  //   console.log(star2);
+  // }
+  for (i = 0; i < num2 / 2; i++) {
+    for (j = 0; j <= i; j++) {
+      star2 = star2 + "*";
+    }
+    star2 = star2 + "\n";
+  }
+
+  for (i = num2 / 2 - 1; i > 0; i--) {
+    for (j = 0; j < i; j++) {
+      star2 = star2 + "*";
+    }
+    star2 = star2 + "\n";
+  }
+  console.log(star2);
+}
+
+inputStar2(9);

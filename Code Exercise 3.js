@@ -73,24 +73,48 @@ printStars1(5);
  *
  */
 
+// Solution 1 ************************************************
 function printStars2(n2) {
   star2 = "";
   for (let i = 0; i < n2; i++) {
     for (let j = 0; j <= i; j++) {
-      star2 += "*";
+      star2 = star2 + "*";
     }
-    star2 += "\n";
+    star2 = star2 + "\n";
   }
 
   for (let i = n2 - 1; i > 0; i--) {
     for (let j = 0; j < i; j++) {
-      star2 += "*";
+      star2 = star2 + "*";
     }
-    star2 += "\n";
+    star2 = star2 + "\n";
   }
   console.log(star2);
 }
 printStars2(5);
+
+// Solution 2 ************************************************
+function inputStar2(num2) {
+  if (num2 % 2 == 1) {
+    let star2 = "";
+    for (i = 0; i < num2 / 2; i++) {
+      for (j = 0; j <= i; j++) {
+        star2 = star2 + "*";
+      }
+      star2 = star2 + "\n";
+    }
+
+    for (i = num2 / 2 - 1; i > 0; i--) {
+      for (j = 0; j < i; j++) {
+        star2 = star2 + "*";
+      }
+      star2 = star2 + "\n";
+    }
+    console.log(star2);
+  } else console.log("You should input Odd Number for row.");
+}
+
+inputStar2(9);
 
 // Question 3
 // Write a function that takes a value n as a parameter, and prints the following pattern
@@ -101,12 +125,18 @@ printStars2(5);
  *  * * * *  *
  */
 
-let star3 = "*";
-
+let star3 = "";
 function inputStars3(n3) {
   for (i = 0; i < n3; i++) {
-    for (j = 0; j < n * 2 + 1; j++) {
-      console.log(j);
+    for (j = 0; j < n3 * 2 - 1; j++) {
+      if (j == n3 - 1 - i || j == n3 - 1 + i || i == n3 - 1) {
+        star3 = star3 + "*";
+      } else {
+        star3 = star3 + " ";
+      }
     }
+    star3 = star3 + "\n";
   }
+  console.log(star3);
 }
+inputStars3(10);
