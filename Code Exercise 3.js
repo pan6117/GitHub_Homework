@@ -47,6 +47,7 @@ function printStars(n) {
  *
  */
 
+//  Solution 1 ---------------------------------------------
 function printStars1(n1) {
   star1 = "";
   for (let i = n1; i > 0; i--) {
@@ -58,6 +59,20 @@ function printStars1(n1) {
   console.log(star1);
 }
 printStars1(5);
+
+// Solution 2 ----------------------------------------------
+function inputStars(num) {
+  let star = "";
+  for (i = 0; i < num; i++) {
+    for (j = i; j < num; j++) {
+      star += "*";
+    }
+    star += "\n";
+  }
+  console.log(star);
+}
+
+inputStars(5);
 
 // Question 2
 // Write a function that takes a value n as a parameter, and prints the following pattern
