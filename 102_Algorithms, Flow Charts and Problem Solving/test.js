@@ -92,3 +92,26 @@ function largeNum(arr) {
 }
 
 largeNum([20, 30, 50, 40, 0, 10]);
+
+function removeDupes(str) {
+  // If there is any duplicate i can return value
+  let newStr = "";
+  for (i = 0; i < str.length - 1; i++) {
+    for (j = 1; j < str.length; j++) {
+      if (str[i] !== str[j]) {
+        newStr = str[j];
+      }
+    }
+  }
+  return newStr;
+  //console.log(newStr);
+}
+//let str = "abcd";
+//let str = "aabbccdd";
+//let str = "abcddbca";
+//let str = "abababcdcdcd";
+
+console.log(removeDupes("abcd"));
+console.log(removeDupes("aabbccdd"));
+console.log(removeDupes("abcddbca"));
+console.log(removeDupes("abababcdcdcd"));
