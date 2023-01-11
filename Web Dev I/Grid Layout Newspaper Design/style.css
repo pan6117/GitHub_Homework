@@ -1,0 +1,127 @@
+body {
+  font-family: "Sofia Sans", "Roboto", sans-serif;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 10% repeat(4, 1fr);
+  grid-template-areas:
+    "header header header header"
+    "left-aside main main right-aside"
+    "left-aside main main right-aside"
+    "left-aside footer footer footer"
+    "left-aside footer footer footer";
+  height: 100vh;
+  /* padding: 10px; */
+  gap: 10px;
+  background-color: rgb(35, 35, 35);
+  color: white;
+  box-sizing: border-box;
+}
+
+header,
+aside,
+main,
+footer {
+  /* border: 2px solid rgb(130, 126, 126); */
+}
+
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) 35%;
+  gap: 10px;
+  padding: 20px 30px;
+}
+
+.header-block {
+  padding: 10px 20px;
+  /* border: 2px solid rgb(75, 75, 75); */
+  border-radius: 30px;
+  background-color: rgb(65, 65, 65);
+}
+
+.weather {
+  text-align: right;
+  border: none;
+  background-color: rgb(35, 35, 35);
+}
+
+.left-aside {
+  grid-area: left-aside;
+  display: grid;
+  grid-template-rows: 50px repeat(7, 1fr);
+}
+.left-block {
+  padding: 10px;
+  border: 1px dashed rgb(65, 65, 65);
+  border-radius: 8px;
+}
+.left-aside h3 {
+  padding: 10px;
+  margin: 0;
+}
+.left-block h4 {
+  margin: 5px 0px;
+}
+
+.left-block p,
+main div p {
+  margin: 0;
+  font-size: 12px;
+  color: aqua;
+}
+
+main {
+  grid-area: main;
+  padding: 10px;
+  display: grid;
+  grid-template-rows: 65% 35%;
+  grid-template-areas:
+    "main-image"
+    "main-content";
+}
+
+main div.main-image {
+  grid-area: main-image;
+  width: 100%;
+  height: 100%;
+  background-color: orangered;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+main div.main-content {
+  grid-area: main-content;
+}
+
+/* main div.main-image {
+  width: 418px;
+  height: 170px;
+  background-color: blueviolet;
+  border-radius: 10px;
+} */
+
+main div h1 {
+  margin: 0;
+}
+
+.right-aside {
+  grid-area: right-aside;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.right-block {
+  border: 2px solid rgb(75, 73, 73);
+  padding: 10px;
+}
+
+footer {
+  grid-area: footer;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* margin-top: 50px; */
+}
+
+.footer-block {
+  border: 2px solid rgb(75, 73, 73);
+  padding: 10px;
+}
