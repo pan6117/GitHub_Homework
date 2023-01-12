@@ -2,7 +2,9 @@ body {
   font-family: "Sofia Sans", "Roboto", sans-serif;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 10% repeat(4, 1fr);
+  grid-template-rows: 8% repeat(4, 1fr);
+  /* grid-template-columns: auto;
+  grid-template-rows: auto; */
   grid-template-areas:
     "header header header header"
     "left-aside main main right-aside"
@@ -10,11 +12,11 @@ body {
     "left-aside footer footer footer"
     "left-aside footer footer footer";
   height: 100vh;
-  /* padding: 10px; */
   gap: 10px;
   background-color: rgb(35, 35, 35);
   color: white;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
+  grid-auto-flow: dense;
 }
 
 header,
@@ -29,7 +31,7 @@ header {
   display: grid;
   grid-template-columns: repeat(5, 1fr) 35%;
   gap: 10px;
-  padding: 20px 30px;
+  padding: 10px 30px;
 }
 
 .header-block {
@@ -37,12 +39,15 @@ header {
   /* border: 2px solid rgb(75, 75, 75); */
   border-radius: 30px;
   background-color: rgb(65, 65, 65);
+  box-shadow: rgb(204, 219, 232) 1px 1px 3px 0px inset,
+    rgba(255, 255, 255, 0.5) -1px -1px 3px 1px inset;
 }
 
 .weather {
   text-align: right;
   border: none;
   background-color: rgb(35, 35, 35);
+  box-shadow: none;
 }
 
 .left-aside {
@@ -50,7 +55,9 @@ header {
   display: grid;
   grid-template-rows: 50px repeat(7, 1fr);
 }
-.left-block {
+.left-block,
+.right-block,
+.footer-block {
   padding: 10px;
   border: 1px dashed rgb(65, 65, 65);
   border-radius: 8px;
@@ -59,37 +66,59 @@ header {
   padding: 10px;
   margin: 0;
 }
-.left-block h4 {
+.left-block h4,
+.right-block h4,
+.footer-block h4 {
   margin: 5px 0px;
 }
 
 .left-block p,
-main div p {
+main div p,
+.right-block p,
+.footer-block p {
   margin: 0;
   font-size: 12px;
   color: aqua;
 }
 
+.right-aside {
+  grid-area: right-aside;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.right-block p.right-content,
+.footer-block p.right-content {
+  font-size: 14px;
+  color: white;
+}
+
 main {
   grid-area: main;
-  padding: 10px;
+  /* padding: 10px; */
   display: grid;
   grid-template-rows: 65% 35%;
   grid-template-areas:
     "main-image"
     "main-content";
+  /* grid-auto-flow: dense; */
+  /* height: 100%; */
+  /* overflow: auto; */
 }
 
 main div.main-image {
   grid-area: main-image;
   width: 100%;
   height: 100%;
-  background-color: orangered;
+  /* background-color: orangered; */
+  background-image: url(./images/main-image.jpg);
+  background-position: center;
   border-radius: 10px;
   margin-bottom: 10px;
 }
 main div.main-content {
   grid-area: main-content;
+  padding: 6px;
 }
 
 /* main div.main-image {
@@ -103,25 +132,30 @@ main div h1 {
   margin: 0;
 }
 
-.right-aside {
-  grid-area: right-aside;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-}
-
-.right-block {
-  border: 2px solid rgb(75, 73, 73);
-  padding: 10px;
-}
-
 footer {
   grid-area: footer;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  /* gap: 10px; */
   /* margin-top: 50px; */
 }
 
-.footer-block {
-  border: 2px solid rgb(75, 73, 73);
-  padding: 10px;
+footer div.footer-image {
+  width: 100%;
+  height: 60%;
+  /* background-color: orangered; */
+  border-radius: 10px;
+  margin-bottom: 8px;
+  background-position: center;
+  background-size: cover;
+}
+
+#footer-image-1 {
+  background-image: url(./images/footer-image-1.jpg);
+}
+#footer-image-2 {
+  background-image: url(./images/footer-image-2.jpg);
+}
+#footer-image-3 {
+  background-image: url(./images/footer-image-3.jpg);
 }
